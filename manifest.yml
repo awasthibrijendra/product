@@ -1,0 +1,11 @@
+applications:
+  - name: product
+    memory: 700M
+    instances: 1
+    path: build/libs/product-0.0.1-SNAPSHOT.jar
+    routes:
+    - route: brijendra-product.cfapps.io
+    services:
+    - mydb
+    env:
+      spring.zipkin.base-url: http://brijendra-zipkin.cfapps.io/
